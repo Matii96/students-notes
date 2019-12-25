@@ -14,8 +14,8 @@ async function AllowUsers(
   return new Promise(
     async (resolve, reject): Promise<void> => {
       try {
+        let addedUsers: number[] = [];
         const removedUsers: number[] = [];
-        const addedUsers: number[] = [];
         const leftUsers: number[] = [];
 
         // Get new owners
@@ -40,6 +40,15 @@ async function AllowUsers(
         const currentOwners: number[] = userNotes.map((userNote: UserNote): number => userNote.userId);
 
         // Compare owners
+        for (const currentOwner of currentOwners) {
+          if (newOwners.includes(currentOwner)) {
+            leftUsers.push(currentOwner);
+            newOwners.splice(newOwners.indexOf(currentOwner), 1);
+          } else {
+            removedUsers.push(currentOwner);
+          }
+        }
+        addedUsers = newOwners;
 
         // Remove old relations
         if (userNotes.length > 0) {
@@ -62,7 +71,7 @@ async function AllowUsers(
         await UserNote.bulkCreate(newUserNotes, {
           transaction: t
         });
-        resolve();
+        resolve({ removedUsers, addedUsers, leftUsers });
       } catch (err) {
         reject(err);
       }

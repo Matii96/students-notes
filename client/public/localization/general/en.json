@@ -48,6 +48,8 @@
   "restore": "Restore",
   "hideRemoved": "Hide removed",
   "showRemoved": "Show removed",
+  "lock": "Lock",
+  "unlock": "Unlock",
 
   "notFoundTitle": "Oops! Page not found",
   "notFoundContent": "We could not find the page you were looking for",

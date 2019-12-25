@@ -114,6 +114,7 @@ export default class NotesList extends Vue {
         data: this.notes,
         pageLength: 10,
         dom: config.datatables.btnNewDom,
+        order: [[2, 'desc']],
         // @ts-ignore
         buttons: [
           {
@@ -146,7 +147,8 @@ export default class NotesList extends Vue {
             title: this.$t('updatedAt').toString(),
             width: '15%',
             render(data, type, row: row): string {
-              return moment(row[3]).format(config.dateFormat);
+              let time: number = new Date(row[3]).getTime();
+              return `<span class="hidden">${time}</span>${moment(row[3]).format(config.dateFormat)}`;
             }
           },
           {
