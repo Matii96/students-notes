@@ -15,7 +15,7 @@ async function Create(req: IRequestAuthorised, res: Response): Promise<void> {
     const user: User = await User.create(req.body);
     res.send(user.hash);
 
-    // Get user company and role
+    // Get user role
     const userInfo: User = await User.findOne({
       where: {
         id: user.id

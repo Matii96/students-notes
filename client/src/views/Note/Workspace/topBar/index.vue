@@ -1,6 +1,8 @@
 <template>
   <div class="topBar">
-    <div class="tabs"></div>
+    <div class="tabs">
+      <div id="tab-workspace" class="tab tabon">{{ $t('toolbox') }}</div>
+    </div>
     <div class="tabs-right" v-if="participants.length > 1 || (participants.length === 1 && participants[0].count > 1)">
       <div class="tab taboff" v-for="participant in participants">
         <i class="fa fa-user" aria-hidden="true"></i>
@@ -8,7 +10,6 @@
         <template v-if="participant.count > 1"> ({{ participant.count }}) </template>
       </div>
     </div>
-    <ScenarioRunModal :hash="$route.params.hash" :level="2" />
   </div>
 </template>
 
@@ -23,11 +24,6 @@ export default script;
 }
 #tab-workspace {
   width: 130px;
-}
-@media (max-width: 960px) {
-  #tab-workspace {
-    display: none;
-  }
 }
 #tab-reports {
   color: black;

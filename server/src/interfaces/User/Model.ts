@@ -5,6 +5,5 @@ export default interface IUserModel {
   email: string;
   lang: string;
   locked: boolean;
-  companyId: number;
   roleId: number;
 }

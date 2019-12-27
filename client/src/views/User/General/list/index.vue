@@ -174,7 +174,6 @@ export default {
           ],
           rowCallback(row, data) {
             $(row).attr('hash', data[0]);
-            $(row).attr('company', data[4] ? data[4][0] : null);
           },
           columnDefs: [
             {
@@ -202,16 +201,6 @@ export default {
                 if (hash) {
                   component.$router.push(`/user/${hash}`);
                 }
-              }
-            });
-
-            usersTable.unbind('click');
-            usersTable.on('click', 'td:nth-child(4)', evt => {
-              let companyHash = $(evt.target)
-                .closest('tr')
-                .attr('company');
-              if (companyHash) {
-                component.$router.push(`/company/${companyHash}`);
               }
             });
 

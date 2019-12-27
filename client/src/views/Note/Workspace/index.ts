@@ -1,7 +1,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Editor from './editor/index.vue';
 import TopBar from './topBar/index.vue';
-import main from '@/main';
 
 @Component({
   components: {

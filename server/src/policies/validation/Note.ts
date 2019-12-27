@@ -17,7 +17,7 @@ Codes:
 1: colliding name
 */
 
-const UserValidation: IValidation = class UserValidation {
+const NoteValidation: IValidation = class UserValidation {
   public static async Validate(user: User, note: Note, data: INoteForm): Promise<IValidationResult> {
     const schema: ObjectSchema = Joi.object().keys({
       note: Joi.object().keys({
@@ -34,7 +34,7 @@ const UserValidation: IValidation = class UserValidation {
     try {
       const result: ValidationResult<INoteForm> = Joi.validate(data, schema);
       if (result.error) {
-        app.logger.warn('Invalid company data', result.error);
+        app.logger.warn('Invalid note data', result.error);
         return {
           error: 400,
           code: 0
@@ -90,4 +90,4 @@ const UserValidation: IValidation = class UserValidation {
     next();
   }
 };
-export default UserValidation;
+export default NoteValidation;

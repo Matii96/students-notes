@@ -87,7 +87,6 @@
   "session": "Session",
   "type": "Type",
   "message": "Message",
-  "confirmCompanyRemoval": "Enter name of company you want to delete",
   "incorrectName": "Incorrect name",
   "scenarioVersionBeforeRestoring": "Original",
 
@@ -100,6 +99,8 @@
   "dashboard": "Dashboard",
   "remove": "Remove",
   "selectAllowedUsers": "Select allowed users",
+  "toolbox": "Toolbox",
+  "workspace": "Editor",
 
   "key": "Key",
   "value": "Value",

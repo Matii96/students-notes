@@ -157,8 +157,8 @@ export default class NotesList extends Vue {
             data: null,
             orderable: false,
             render(): string {
-              return `<a class="note-dashboard">
-                ${component.$t('dashboard')}</a> /
+              return `<a class="note-editor">
+                ${component.$t('workspace')}</a> /
                 <a class="note-settings" data-toggle="modal" data-target="#noteModal">${component.$t('details')}</a>`;
             }
           }
@@ -185,8 +185,8 @@ export default class NotesList extends Vue {
           });
 
           // Actions events
-          $('.note-dashboard').unbind('click');
-          $('.note-dashboard').click((evt: JQuery.ClickEvent): void => {
+          $('.note-editor').unbind('click');
+          $('.note-editor').click((evt: JQuery.ClickEvent): void => {
             let hash: string = $(evt.target)
               .closest('tr')
               .attr('hash');

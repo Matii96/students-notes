@@ -17,7 +17,7 @@ export default class Note extends Vue {
   private UpdateMeta(data: IBaseEntity): void {
     (this.$parent as Vue & IDash).SetDashMeta([
       {
-        name: `${this.$t('note')} ${data[0].name}`,
+        name: `${this.$t('note')} ${data.name}`,
         path: `/note/${this.$route.params.hash}`
       }
     ]);
@@ -35,9 +35,6 @@ export default class Note extends Vue {
   private beforeCreate(): void {
     (this.$parent as Vue & IDash).SetDashMeta([
       {
-        name: this.$t('company').toString()
-      },
-      {
         name: this.$t('note').toString(),
         path: `/note/${this.$route.params.hash}`
       }
@@ -45,7 +42,7 @@ export default class Note extends Vue {
   }
 
   private created(): void {
-    // Connect to company socket
+    // Connect to note socket
     let socket: SocketIOClient.Socket = io(config.serverURI + 'notesocket', {
       secure: true,
       transports: ['websocket'],

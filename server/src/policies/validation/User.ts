@@ -55,7 +55,6 @@ const UserValidation: IValidation = class UserValidation {
         .integer()
         .min(1),
       locked: Joi.boolean(),
-      company: Joi.string().max(255),
       password: Joi.string()
         .min(2)
         .max(255)

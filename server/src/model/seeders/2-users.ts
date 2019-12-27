@@ -17,7 +17,6 @@ const users: ISeeder = class Users {
         lang: 'en',
         roleId: 1,
         locked: false,
-        // company_id: null,
         createdAt: now,
         updatedAt: now
       }

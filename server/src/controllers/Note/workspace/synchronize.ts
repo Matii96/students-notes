@@ -10,7 +10,7 @@ async function Synchronize(socket: ISocketNote, data: INoteEntity): Promise<void
         id: socket.note.id
       }
     });
-    socket.to(socket.note.id).broadcast.emit('synchronize', data);
+    socket.to(socket.note.id).broadcast.emit('synchronize', data.content);
   } catch (err) {
     app.logger.error('An error has occured when trying to synchronize note', socket.note.hash, data, err);
   }

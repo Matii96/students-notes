@@ -3,5 +3,4 @@ export default interface ILoginUser {
   name: string;
   role: number;
   lang: string;
-  company: string;
 }

@@ -20,6 +20,7 @@ import VueProgressBar from 'vue-progressbar';
 Vue.use(VueProgressBar, config.progressbar);
 
 import wysiwyg from 'vue-wysiwyg';
+import 'vue-wysiwyg/dist/vueWysiwyg.css';
 Vue.use(wysiwyg, {}); // config is optional. more below
 
 export default new Vue({
