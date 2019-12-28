@@ -22,6 +22,9 @@ Presentation project for Node.js and Vue 2 web application.
   ```
   npm run serve
   ```
+- Example login:
+  - Username: test
+  - Password: test
  # Deployment
  - Client and server directories:
     ```

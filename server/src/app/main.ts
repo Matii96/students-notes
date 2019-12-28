@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { Sequelize } from 'sequelize-typescript';
-import ICustomLogger from '@/services/logger';
+import CustomLogger from '@/services/logger';
 import ILogger from '@/interfaces/Logger';
 import Model from '@/model';
 
@@ -15,7 +15,7 @@ export default class BaseApp {
     this.rootdir = path.resolve(__dirname, '..', '..');
 
     // Init logger
-    this.logger = new ICustomLogger(config).logger;
+    this.logger = new CustomLogger(config).logger;
 
     // Init model
     // Add logger to sequelize
